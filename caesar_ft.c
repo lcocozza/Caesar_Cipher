@@ -22,9 +22,11 @@ void	ft_caesar_encode(char *str, char *base, int decal)
 			j = j + decal - nbBase;
 		else
 			j += decal;
+		printf("%c", base[j]);
 		str[i] = base[j];
+		j = -1;
 	}
-	printf("%s\n", str);
+	printf("\n");
 }
 
 void	ft_caesar_decode(char *str, char *base)
@@ -51,8 +53,10 @@ void	ft_caesar_decode(char *str, char *base)
 			else
 				j -= k;
 			strC[i] = base[j];
+			j = -1;
 		}
 		printf("%s %d\n", strC, k);
+		i = -1;
 	}
 	free(strC);
 }
